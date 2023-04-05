@@ -175,7 +175,12 @@ while (sum <= 50)
 {
     sum = 0;
 
-    numeri[counter++] = Convert.ToInt32(Console.ReadLine());
+    int input = Convert.ToInt32(Console.ReadLine());
+
+    if (input < 1)
+        continue;
+
+    numeri[counter++] = input;
 
     foreach (int i in numeri)
     {

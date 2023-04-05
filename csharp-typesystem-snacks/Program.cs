@@ -3,21 +3,16 @@
 int n1, n2;
 
 Console.WriteLine("Inserisci un numero");
-string input1 = Console.ReadLine();
+while (!int.TryParse(Console.ReadLine(), out n1))
+    Console.WriteLine("Inserisci un VERO numero");
 
 Console.WriteLine("Inserisci un altro numero");
-string input2 = Console.ReadLine();
+while (!int.TryParse(Console.ReadLine(), out n2))
+    Console.WriteLine("Inserisci un VERO numero");
 
-if (int.TryParse(input1, out n1) && int.TryParse(input2, out n2))
-{
-    if (n1 > n2)
-        Console.WriteLine(n1);
-    else
-        Console.WriteLine(n2);
-}
-else
-    Console.WriteLine("Input non validi!");
+int maxNumber = n1 > n2 ? n1 : n2;
 
+Console.WriteLine($"Il numero maggiore è {maxNumber}");
 
 // 2° snack
 
